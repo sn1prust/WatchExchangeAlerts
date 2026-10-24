@@ -1,0 +1,14 @@
+[Unit]
+Description=r/Watchexchange keyword alert bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=watchbot
+WorkingDirectory=/opt/watchbot
+ExecStart=/usr/bin/python3 /opt/watchbot/watchbot.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
